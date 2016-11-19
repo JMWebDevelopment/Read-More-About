@@ -1,0 +1,38 @@
+/*
+* The stylesheet for the read more links metabox.
+*
+* Author: Jacob Martella
+* Package: Read More About
+* Version: 1.4
+*/
+#read-more-about-meta label {
+	margin-right: 5px;
+}
+
+#read_more_about_external {
+	margin-right: 10px;
+}
+
+#read-more-about-meta .internal-link {
+	display: none;
+}
+
+#read_more_about_link, #read_more_about_external_title {
+	width: 80%;
+}
+
+.hidden-fields {
+	display: none;
+}
+
+.read-more-about-wrap {
+	margin-bottom: 10px;
+}
+
+.read-more-link-fields {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 15px;
+}
+.read-more-link-fields:hover {
+	cursor: move;
+}
