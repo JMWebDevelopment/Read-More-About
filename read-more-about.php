@@ -88,6 +88,9 @@ function read_more_about_shortcode( $atts ) {
 			} else {
 				$html .= '<h3 class="story-title"><a href="' . $field[ 'read_more_about_link' ] . '" target="_blank">' . $field[ 'read_more_about_external_title' ] . '</a></h3>';
 			}
+			if ( $field[ 'read_more_about_description'] ) {
+			    $html .= apply_filters( 'the_content', $field[ 'read_more_about_description'] );
+            }
 			$html .= '</div>';
 		}
 		$html .= '</aside>';

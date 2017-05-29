@@ -17,7 +17,7 @@
 	display: none;
 }
 
-#read_more_about_link, #read_more_about_external_title {
+#read_more_about_link, #read_more_about_external_title, #read_more_about_description {
 	width: 80%;
 }
 
@@ -32,6 +32,13 @@
 .read-more-link-fields {
 	border-bottom: 1px solid #e5e5e5;
 	padding-bottom: 15px;
+	width: 100%;
+}
+.read-more-link-field {
+	width: 100%;
+}
+.read-more-link-fields td:first-child, .read-more-link-field td:first-child {
+	width: 25%;
 }
 .read-more-link-fields:hover {
 	cursor: move;

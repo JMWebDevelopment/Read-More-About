@@ -60,6 +60,9 @@ class Read_More_About_Widget extends WP_Widget {
                     } else {
                         echo '<h3 class="story-title"><a href="' . $field[ 'read_more_about_link' ] . '" target="_blank">' . $field[ 'read_more_about_external_title' ] . '</a></h3>';
                     }
+                    if ( $field[ 'read_more_about_description'] ) {
+                        echo apply_filters( 'the_content', $field[ 'read_more_about_description'] );
+                    }
                     echo '</div>';
                 }
                 echo '</aside>';
@@ -85,7 +88,7 @@ class Read_More_About_Widget extends WP_Widget {
             $title = $instance[ 'title' ];
         }
         else {
-            $title = __( '', 'sports-bench' );
+            $title = __( '', 'read-more-about' );
         }
 
         echo '<p>';

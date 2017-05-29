@@ -9,19 +9,19 @@ jQuery( document ).ready( function( $ ) {
 	} );
   	
 	$( '.read-more-remove-row' ).on( 'click', function() {
-		$( this ).parents( 'section' ).remove();
+		$( this ).parents( 'table' ).remove();
 		return false;
 	} );
 
 	$( ".read_more_about_in_ex" ).change( function() {
         if ( $( this ).val() == "internal" ) {
-            $( this ).parents( 'section' ).find( ".internal-link" ).show();
-            $( this ).parents( 'section' ).find( ".external-link" ).hide();
-            $( this ).parents( 'section' ).find( ".external-title" ).hide();
+            $( this ).parents( 'table' ).find( ".internal-link" ).css( 'display', 'table-row' );
+            $( this ).parents( 'table' ).find( ".external-link" ).hide();
+            $( this ).parents( 'table' ).find( ".external-title" ).hide();
         } else {
-        	$( this ).parents( 'section' ).find( ".internal-link" ).hide();
-            $( this ).parents( 'section' ).find( ".external-link" ).show();
-            $( this ).parents( 'section' ).find( ".external-title" ).show();
+        	$( this ).parents( 'table' ).find( ".internal-link" ).hide();
+            $( this ).parents( 'table' ).find( ".external-link" ).css( 'display', 'table-row' );
+            $( this ).parents( 'table' ).find( ".external-title" ).css( 'display', 'table-row' );
         }
     } );
 
@@ -29,6 +29,6 @@ jQuery( document ).ready( function( $ ) {
 		opacity: 0.6,
 		revert: true,
 		cursor: 'move',
-		items: 'section'
+		items: 'table'
 	} );
 } );
