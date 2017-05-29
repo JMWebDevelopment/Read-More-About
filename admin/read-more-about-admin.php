@@ -255,23 +255,23 @@ function read_more_about_meta_box_save( $post_id ) {
 
 			if ( isset( $in_ex ) ) {
 			
-			if ( isset( $in_ex[ $i ] ) && array_key_exists( $in_ex[ $i ], $in_ex_array ) ) {
+			if ( isset( $in_ex[ $i ] ) && array_key_exists( $in_ex[ $i ], $in_ex_array ) && read_more_is_filled( $in_ex[ $i ], $ex_link[ $i ], $in_link[ $i ] ) ) {
 				$new[ $i ][ 'read_more_about_in_ex' ] = wp_filter_nohtml_kses( $in_ex[ $i ] );
 			}
 
-			if( isset( $ex_link[ $i ] ) ) {
+			if( isset( $ex_link[ $i ] ) && read_more_is_filled( $in_ex[ $i ], $ex_link[ $i ], $in_link[ $i ] ) ) {
         		$new[ $i ][ 'read_more_about_link' ] = wp_filter_nohtml_kses( $ex_link[ $i ] );
     		}
 
-    		if( isset( $ex_title[ $i ] ) ) {
+    		if( isset( $ex_title[ $i ] ) && read_more_is_filled( $in_ex[ $i ], $ex_link[ $i ], $in_link[ $i ] ) ) {
 	    		$new[ $i ][ 'read_more_about_external_title' ] = stripslashes( strip_tags( $ex_title[ $i ] ) );
 	    	}
 
-    		if ( isset( $in_link[ $i ] ) && array_key_exists( $in_link[ $i ], $posts_array ) ) {
+    		if ( isset( $in_link[ $i ] ) && array_key_exists( $in_link[ $i ], $posts_array ) && read_more_is_filled( $in_ex[ $i ], $ex_link[ $i ], $in_link[ $i ] ) ) {
 				$new[ $i ][ 'read_more_about_internal_link' ] = wp_filter_nohtml_kses( $in_link[ $i ] );
 			}
 
-            if( isset( $link_description[ $i ] ) ) {
+            if( isset( $link_description[ $i ] ) && read_more_is_filled( $in_ex[ $i ], $ex_link[ $i ], $in_link[ $i ] ) ) {
                 $new[ $i ][ 'read_more_about_description' ] = wp_filter_nohtml_kses( $link_description[ $i ] );
             }
 		}
@@ -284,4 +284,19 @@ function read_more_about_meta_box_save( $post_id ) {
 	}
 }
 
+function read_more_is_filled( $in_ex, $ex_link, $in_link ) {
+    if ( $in_ex == 'external' ) {
+        if ( $ex_link != '' ) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        if ( $in_link > 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 ?>
