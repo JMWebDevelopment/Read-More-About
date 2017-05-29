@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Read More About\n"
-"POT-Creation-Date: 2016-11-18 21:26-0600\n"
-"PO-Revision-Date: 2016-11-18 21:27-0600\n"
+"POT-Creation-Date: 2017-05-29 16:04-0500\n"
+"PO-Revision-Date: 2017-05-29 16:04-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: read-more-about.php\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -37,40 +37,45 @@ msgstr "Ссылки на родственные ресурсы"
 msgid "Color Scheme"
 msgstr "Цветова схема"
 
-#: admin/read-more-about-admin.php:73 admin/read-more-about-admin.php:122
-#: admin/read-more-about-admin.php:157
+#: admin/read-more-about-admin.php:73 admin/read-more-about-admin.php:132
+#: admin/read-more-about-admin.php:172
 msgid "External/Internal Link"
 msgstr "Внешние/внутренние ссылки"
 
-#: admin/read-more-about-admin.php:88 admin/read-more-about-admin.php:131
-#: admin/read-more-about-admin.php:171
+#: admin/read-more-about-admin.php:88 admin/read-more-about-admin.php:141
+#: admin/read-more-about-admin.php:186
 msgid "External URL"
 msgstr "Внешнее"
 
-#: admin/read-more-about-admin.php:94 admin/read-more-about-admin.php:136
-#: admin/read-more-about-admin.php:176
+#: admin/read-more-about-admin.php:94 admin/read-more-about-admin.php:146
+#: admin/read-more-about-admin.php:191
 msgid "External URL Title"
 msgstr "Заголовок"
 
-#: admin/read-more-about-admin.php:100 admin/read-more-about-admin.php:141
-#: admin/read-more-about-admin.php:181
+#: admin/read-more-about-admin.php:100 admin/read-more-about-admin.php:151
+#: admin/read-more-about-admin.php:196
 msgid "Internal Post"
 msgstr "Внутренняя почта"
 
-#: admin/read-more-about-admin.php:113 admin/read-more-about-admin.php:149
-#: admin/read-more-about-admin.php:194
+#: admin/read-more-about-admin.php:119 admin/read-more-about-admin.php:160
+#: admin/read-more-about-admin.php:210
+msgid "Link Description"
+msgstr "Описание ссылки"
+
+#: admin/read-more-about-admin.php:123 admin/read-more-about-admin.php:164
+#: admin/read-more-about-admin.php:214
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
-#: admin/read-more-about-admin.php:198
+#: admin/read-more-about-admin.php:218
 msgid "Add Link"
 msgstr "Добавить ссылку"
 
 #: read-more-about-widget.php:21
 msgid "Read More About Widget"
-msgstr ""
+msgstr "Подробнее о виджет"
 
-#: read-more-about-widget.php:92
+#: read-more-about-widget.php:95
 msgid "Title:"
 msgstr "Заголовок:"
 
