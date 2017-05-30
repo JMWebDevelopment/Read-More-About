@@ -2,7 +2,7 @@
 Contributors: ArenaPigskin
 Tags: related links, shortcodes, custom meta panel
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.8
 Stable tag: 1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -23,6 +23,10 @@ Read More About allows users to add links in a story using a shortcode to provid
 3. The Read More About section in a post.
 
 == Changelog ==
+= 1.5 =
+- Added a description field for each link for added background if need be.
+- Tested with WordPress 4.8.
+
 = 1.4 =
 - Added a widget to show the additional links in the sidebar rather than in the post if the user wishes.
 - Tested with WordPress 4.7.
