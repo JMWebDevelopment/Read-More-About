@@ -6,7 +6,7 @@
  *
  * @author Jacob Martella
  * @package Read More About
- * @version 1.4
+ * @version 1.5
  */
 class Read_More_About_Widget extends WP_Widget {
 
