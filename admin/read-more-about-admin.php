@@ -35,7 +35,7 @@ add_action( 'admin_init', 'read_more_about_add_meta_boxes' );
 
 //* Add the meta box
 function read_more_about_add_meta_boxes() {
-	add_meta_box( 'read-more-about-meta', __( 'Related Links', 'read-more-about' ) , 'read_more_about_meta_box_display', 'post', 'normal', 'default' );
+	add_meta_box( 'read-more-about-meta', __( 'Related Links', 'read-more-about' ) , 'read_more_about_meta_box_display', array( 'post', 'page' ), 'normal', 'default' );
 }
 //* Create the meta box
 function read_more_about_meta_box_display() {
