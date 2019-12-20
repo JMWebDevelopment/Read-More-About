@@ -8,7 +8,7 @@
 *
 * @author Jacob Martella
 * @package Read More About
-* @version 1.6
+* @version 1.7
 */
 //* Set the array for the posts dropdown
 $args = array( 'numberposts' => -1 );
