@@ -113,4 +113,66 @@ function read_more_about_register_buttons( $buttons ) {
     array_push( $buttons, 'read_more_about' );
     return $buttons;
 }
-?>
+
+
+//* Load the Gutenberg block
+function read_more_about_blocks_editor_scripts() {
+	// Make paths variables so we don't write em twice ;)
+	$blockPath = '/js/editor.blocks.js';
+	$editorStylePath = '/assets/css/blocks.editor.css';
+	// Enqueue the bundled block JS file
+	wp_enqueue_script(
+		'read-more-about-blocks-js',
+		plugins_url( $blockPath, __FILE__ ),
+		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-api' ],
+		filemtime( plugin_dir_path(__FILE__) . $blockPath )
+	);
+	// Pass in REST URL
+	wp_localize_script(
+		'read-more-about-blocks-js',
+		'read_more_about_globals',
+		[
+			'rest_url' => esc_url( rest_url() ),
+			'nonce'    => wp_create_nonce( 'wp_rest' ),
+		]);
+	// Enqueue optional editor only styles
+	wp_enqueue_style(
+		'read-more-about-editor-css',
+		plugins_url( $editorStylePath, __FILE__)
+	);
+}
+// Hook scripts function into block editor hook
+add_action( 'enqueue_block_editor_assets', 'read_more_about_blocks_editor_scripts' );
+
+function read_more_about_block_scripts() {
+	// Make paths variables so we don't write em twice ;)
+	$stylePath = '/assets/css/blocks.style.css';
+	// Enqueue optional editor only styles
+	wp_enqueue_style(
+		'read-more-about-block-css',
+		plugins_url( $stylePath, __FILE__)
+	);
+}
+// Hook scripts function into block editor hook
+add_action( 'enqueue_block_assets', 'read_more_about_block_scripts' );
+
+add_action( 'rest_api_init', 'read_more_extend_rest_post_response' );
+function read_more_extend_rest_post_response() {
+	register_rest_field( 'post',
+		'read_more_featured_image_src', //NAME OF THE NEW FIELD TO BE ADDED - you can call this anything
+		array(
+			'get_callback'    => 'read_more_get_image_src',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+
+function read_more_get_image_src(  $object, $field_name, $request  ) {
+	$feat_img_array['full'] = wp_get_attachment_image_src( $object['featured_media'], 'full', false );
+	$feat_img_array['thumbnail'] = wp_get_attachment_image_src( $object['featured_media'], 'thumbnail', false );
+	$feat_img_array['srcset'] = wp_get_attachment_image_srcset( $object['featured_media'] );
+	$feat_img_array['alt'] = get_post_meta( $object['featured_media'], '_wp_attachment_image_alt', true );
+	$image = is_array( $feat_img_array ) ? $feat_img_array : 'false';
+	return $image;
+}

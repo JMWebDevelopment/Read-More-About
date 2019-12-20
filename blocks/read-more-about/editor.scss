@@ -1,0 +1,71 @@
+@import '../../node_modules/react-select/scss/default.scss';
+.components-panel{
+  overflow: visible !important;
+}
+
+.Select-menu-outer {
+  z-index: 10000000 !important;
+}
+
+.grf {
+  &__location-address {
+    float: left;
+    width: calc(100% - 40px);
+  }
+
+  &__remove-location-address {
+    float: left;
+    margin-left: 10px;
+    margin-top: 1px;
+    padding: 5px 5px 4px;
+  }
+}
+
+.Select {
+  float: left;
+  width: calc(100% - 40px);
+  margin-top: 10px;
+}
+
+.wp-block-read-more-about-read-more-about {
+  position: relative;
+  margin: 10px 0px;
+  padding: 10px 5px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(97,97,97,0.26);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(97,97,97,0.26);
+  box-shadow: 0px 0px 5px 0px rgba(97,97,97,0.26);
+  &.light {
+    background-color: #FFFFFF;
+    .title {
+      color: #000000;
+    }
+    .story-title a {
+      color: #000000 !important;
+    }
+  }
+  &.dark {
+    background-color: #252525;
+    .title {
+      color: #FFFFFF;
+    }
+    .story-title a {
+      color: #FFFFFF !important;
+    }
+  }
+  .title {
+    font-size: 28px;
+    margin: 0 0 15px;
+  }
+  .photo {
+    margin: auto;
+    overflow: hidden;
+  }
+  .story-title {
+    line-height: 1em !important;
+    margin-top: 5px;
+    a {
+      font-size: 20px;
+    }
+  }
+}
