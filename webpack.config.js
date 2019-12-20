@@ -25,7 +25,7 @@ const extractConfig = {
       loader: 'sass-loader',
       query: {
         outputStyle:
-          'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
+            'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
       },
     },
   ],
@@ -33,7 +33,7 @@ const extractConfig = {
 
 module.exports = {
   entry: {
-    './js/editor.blocks' : './js/breaking-news-index.js',
+    './js/editor.blocks' : './blocks/index.js',
     // './assets/js/frontend.blocks' : './blocks/frontend.js',
   },
   output: {
@@ -51,14 +51,14 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      /*{
+      {
         test: /style\.s?css$/,
         use: blocksCSSPlugin.extract( extractConfig ),
       },
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract( extractConfig ),
-      },*/
+      },
     ],
   },
   plugins: [
