@@ -23,6 +23,10 @@ Read More About allows users to add links in a story using a shortcode to provid
 3. The Read More About section in a post.
 
 == Changelog ==
+= 1.7 =
+- Added the Read More About Gutenberg block.
+- Tested with WordPress 5.3.
+
 = 1.6.1 =
 - Tested with WordPress 4.9.
 
