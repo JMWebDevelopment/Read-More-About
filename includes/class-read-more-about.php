@@ -89,7 +89,7 @@ class Read_More_About {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-read-more-about-database-updates.php';
 
 		require_once plugin_dir_path( __FILE__ ) . 'class-read-more-about-loader.php';
-		$this->loader = new Starter_Plugin_Loader();
+		$this->loader = new Read_More_About_Loader();
 
 	}
 
@@ -125,6 +125,9 @@ class Read_More_About {
 		$admin = new Read_More_About_Admin( $this->get_version() );
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $admin, 'add_meta_box' );
+		$this->loader->add_action( 'save_post', $admin, 'save_meta_box' );
+		$this->loader->add_action( 'init', $admin, 'read_more_about_buttons' );
 	}
 
 	/**
