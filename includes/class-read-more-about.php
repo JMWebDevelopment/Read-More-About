@@ -128,6 +128,7 @@ class Read_More_About {
 		$this->loader->add_action( 'admin_menu', $admin, 'add_meta_box' );
 		$this->loader->add_action( 'save_post', $admin, 'save_meta_box' );
 		$this->loader->add_action( 'init', $admin, 'read_more_about_buttons' );
+		$this->loader->add_action( 'rest_api_init', $admin, 'extend_rest_post_response' );
 	}
 
 	/**
@@ -137,6 +138,9 @@ class Read_More_About {
 	 */
 	private function define_public_hooks() {
 		$public = new Read_More_About_Public( $this->get_version() );
+		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_styles' );
+		$this->loader->add_action( 'init', $public, 'register_shortcode' );
+		$this->loader->add_action( 'widgets_init', $public, 'register_widget' );
 	}
 
 	/**

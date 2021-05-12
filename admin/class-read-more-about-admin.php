@@ -174,4 +174,25 @@ class Read_More_About_Admin {
 		return $buttons;
 	}
 
+	public function extend_rest_post_response() {
+		register_rest_field(
+			'post',
+			'read_more_featured_image_src',
+			[
+				'get_callback'    => [ $this, 'get_image_src' ],
+				'update_callback' => null,
+				'schema'          => null,
+			]
+		);
+	}
+
+	public function get_image_src( $object, $field_name, $request  ) {
+		$feat_img_array['full']      = wp_get_attachment_image_src( $object['featured_media'], 'full', false );
+		$feat_img_array['thumbnail'] = wp_get_attachment_image_src( $object['featured_media'], 'thumbnail', false );
+		$feat_img_array['srcset']    = wp_get_attachment_image_srcset( $object['featured_media'] );
+		$feat_img_array['alt']       = get_post_meta( $object['featured_media'], '_wp_attachment_image_alt', true );
+		$image                       = is_array( $feat_img_array ) ? $feat_img_array : 'false';
+		return $image;
+	}
+
 }
