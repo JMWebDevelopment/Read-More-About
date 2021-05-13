@@ -129,6 +129,7 @@ class Read_More_About {
 		$this->loader->add_action( 'save_post', $admin, 'save_meta_box' );
 		$this->loader->add_action( 'init', $admin, 'read_more_about_buttons' );
 		$this->loader->add_action( 'rest_api_init', $admin, 'extend_rest_post_response' );
+		$this->loader->add_action( 'init', $admin, 'check_gutenberg' );
 	}
 
 	/**

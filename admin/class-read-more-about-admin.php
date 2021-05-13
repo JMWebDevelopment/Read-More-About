@@ -68,7 +68,7 @@ class Read_More_About_Admin {
 		}
 	}
 
-	public function add_meta_boxes() {
+	public function add_meta_box() {
 		add_meta_box( 'read-more-about-meta', esc_html__( 'Related Links', 'read-more-about' ) , [ $this, 'meta_box_display' ], [ 'post', 'page' ], 'normal', 'default' );
 	}
 
@@ -193,6 +193,64 @@ class Read_More_About_Admin {
 		$feat_img_array['alt']       = get_post_meta( $object['featured_media'], '_wp_attachment_image_alt', true );
 		$image                       = is_array( $feat_img_array ) ? $feat_img_array : 'false';
 		return $image;
+	}
+
+	/**
+	 * Loads the block editor scripts and styles.
+	 *
+	 * @since 2.0.0
+	 */
+	public function blocks_editor_scripts() {
+		$block_path = '../public/js/editor.blocks.js';
+
+		wp_enqueue_style(
+			'read-more-about-blocks-editor-css',
+			plugin_dir_url( __FILE__ ) . 'css/blocks.editor.css'
+		);
+
+		wp_enqueue_script(
+			'read-more-about-blocks-js',
+			plugins_url( $block_path, __FILE__ ),
+			[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-api', 'wp-editor' ],
+			filemtime( plugin_dir_path(__FILE__) . $block_path )
+		);
+
+		wp_localize_script(
+			'read-more-about-blocks-js',
+			'read_more_about_globals',
+			[
+				'rest_url'  => esc_url( rest_url() ),
+				'nonce'     => wp_create_nonce( 'wp_rest' ),
+			]
+		);
+	}
+
+	/**
+	 * Loads the front-end styles for the block.
+	 *
+	 * @since 2.0.0
+	 */
+	public function block_scripts() {
+		$style_path = '../public/css/block.min.css';
+		wp_enqueue_style(
+			'read-more-about-block-css',
+			plugins_url( $style_path, __FILE__ )
+		);
+	}
+
+	/**
+	 * Checks to make sure Gutenberg is active or the WP version is greater than 5.0.
+	 *
+	 * @since 2.0.0
+	 */
+	public function check_gutenberg() {
+		if ( ! function_exists( 'register_block_type' ) ) {
+			// Block editor is not available.
+			return;
+		}
+
+		add_action( 'enqueue_block_assets', [ $this, 'block_scripts' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'blocks_editor_scripts' ] );
 	}
 
 }
