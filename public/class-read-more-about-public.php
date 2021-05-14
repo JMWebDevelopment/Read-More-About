@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @link       https://jacobmartella.com
- * @since      1.8.0
+ * @since      2.0.0
  *
  * @package    Read_More_About
  * @subpackage Read_More_About/public
@@ -18,7 +18,7 @@ namespace Read_More_About;
  *
  * This class defines all code necessary to run on the public side of the plugin.
  *
- * @since      1.8.0
+ * @since      2.0.0
  * @package    Read_More_About
  * @subpackage Read_More_About/public
  */
@@ -27,7 +27,7 @@ class Read_More_About_Public {
 	/**
 	 * Version of the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 * @var string $version Description.
 	 */
 	private $version;
@@ -35,7 +35,7 @@ class Read_More_About_Public {
 	/**
 	 * Builds the Read_More_About_Public object.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 *
 	 * @param string $version Version of the plugin.
 	 */
@@ -46,7 +46,7 @@ class Read_More_About_Public {
 	/**
 	 * Enqueues the styles for the public side of the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( 'read-more-about-public', plugin_dir_url( __FILE__ ) . 'css/read-more-about-style.min.css', [], $this->version, 'all' );
@@ -55,16 +55,29 @@ class Read_More_About_Public {
 	/**
 	 * Enqueues the scripts for the public side of the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	public function enqueue_scripts() {
 
 	}
 
+	/**
+	 * Registers the read more about shortcode.
+	 *
+	 * @since 2.0.0
+	 */
 	public function register_shortcode() {
 		add_shortcode( 'read-more', [ $this, 'read_more_about_shortcode' ] );
 	}
 
+	/**
+	 * Renders the Read More About shortcode.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param array $atts      The attributes for the shortcode.
+	 * @return string          The HTML for the read more about shortcode.
+	 */
 	public function read_more_about_shortcode( $atts ) {
 		extract(
 			shortcode_atts(
@@ -111,7 +124,7 @@ class Read_More_About_Public {
 	 *
 	 * @since 2.0.0
 	 */
-	function register_widget() {
+	public function register_widget() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/read-more-about-widget.php';
 
 		register_widget( 'Read_More_About_Widget' );

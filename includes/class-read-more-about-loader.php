@@ -3,7 +3,7 @@
  * Creates the loading function for actions and hooks.
  *
  * @link       https://jacobmartella.com
- * @since      1.8.0
+ * @since      2.0.0
  *
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
@@ -14,7 +14,7 @@ namespace Read_More_About;
 /**
  * Creates the ability to easily add actions and hooks in the plugin.
  *
- * @since      1.8.0
+ * @since      2.0.0
  * @package    Starter_Plugin
  * @subpackage Starter_Plugin/includes
  */
@@ -23,7 +23,7 @@ class Read_More_About_Loader {
 	/**
 	 * The array of actions registered with WordPress.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access protected
 	 * @var    array $actions The actions registered with WordPress to fire when the plugin loads.
 	 */
@@ -32,7 +32,7 @@ class Read_More_About_Loader {
 	/**
 	 * The array of filters registered with WordPress.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access protected
 	 * @var    array $filters The filters registered with WordPress to fire when the plugin loads.
 	 */
@@ -41,7 +41,7 @@ class Read_More_About_Loader {
 	/**
 	 * Initialize the collections used to maintain the actions and filters.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 */
 	public function __construct() {
 
@@ -53,7 +53,7 @@ class Read_More_About_Loader {
 	/**
 	 * Add a new action to the collection to be registered with WordPress.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 * @param string $hook             The name of the WordPress action that is being registered.
 	 * @param object $component        A reference to the instance of the object on which the action is defined.
 	 * @param string $callback         The name of the function definition on the $component.
@@ -67,7 +67,7 @@ class Read_More_About_Loader {
 	/**
 	 * Add a new filter to the collection to be registered with WordPress.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 * @param string $hook       The name of the WordPress filter that is being registered.
 	 * @param object $component  A reference to the instance of the object on which the filter is defined.
 	 * @param string $callback   The name of the function definition on the $component.
@@ -82,7 +82,7 @@ class Read_More_About_Loader {
 	 * A utility function that is used to register the actions and hooks into a single
 	 * collection.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access private
 	 * @param  array  $hooks         The collection of hooks that is being registered (that is, actions or filters).
 	 * @param  string $hook          The name of the WordPress filter that is being registered.
@@ -109,7 +109,7 @@ class Read_More_About_Loader {
 	/**
 	 * Register the filters and actions with WordPress.
 	 *
-	 * @since    1.8.0
+	 * @since    2.0.0
 	 */
 	public function run() {
 

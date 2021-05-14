@@ -1,8 +1,36 @@
 <?php
+/**
+ * File that displays the custom meta box for the breaking custom post type.
+ *
+ * PHP version 7.3
+ *
+ * @link       https://jacobmartella.com
+ * @since      2.0.0
+ *
+ * @package    Read_More_About
+ * @subpackage Read_More_About/admin/partials
+ */
+
 global $post;
 global $posts_array;
 global $in_ex_array;
 global $color_array;
+
+$args        = array( 'numberposts' => -1 );
+$posts_array = [];
+$more_posts  = get_posts( $args );
+foreach ( $more_posts as $the_post ) {
+	setup_postdata( $the_post );
+	$the_id                 = get_the_ID();
+	$name                   = get_the_title();
+	$posts_array[ $the_id ] = $name;
+}
+
+$color_array             = [];
+$color_array['light']    = 'Light';
+$color_array['dark']     = 'Dark';
+$in_ex_array['external'] = __( 'External', 'read-more-about' );
+$in_ex_array['internal'] = __( 'Internal', 'read-more-about' );
 
 $links        = get_post_meta( $post->ID, 'read_more_links', true );
 $color_scheme = get_post_meta( $post->ID, 'read_more_color_scheme', true );

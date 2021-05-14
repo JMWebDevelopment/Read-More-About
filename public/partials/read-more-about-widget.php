@@ -1,12 +1,24 @@
 <?php
 /**
+ * File that creates the widget to display read more about in the sidebar.
+ *
+ * PHP version 7.3
+ *
+ * @link       https://jacobmartella.com
+ * @since      2.0.0
+ *
+ * @package    Read_More_About
+ * @subpackage Read_More_About/public/partials
+ */
+
+/**
  * Read-more-about-widget.php
  *
  * Creates the a widget for the plugin that the user can use
  *
  * @author Jacob Martella
  * @package Read More About
- * @version 1.7
+ * @version 2.0
  */
 class Read_More_About_Widget extends WP_Widget {
 

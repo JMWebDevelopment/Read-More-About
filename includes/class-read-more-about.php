@@ -6,7 +6,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://jacobmartella.com
- * @since      1.8.0
+ * @since      2.0.0
  *
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
@@ -23,7 +23,7 @@ namespace Read_More_About;
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.8.0
+ * @since      2.0.0
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
  */
@@ -33,7 +33,7 @@ class Read_More_About {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access protected
 	 * @var    Read_More_About_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Read_More_About {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access protected
 	 * @var    string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Read_More_About {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @access protected
 	 * @var    string    $version    The current version of the plugin.
 	 */
@@ -60,12 +60,12 @@ class Read_More_About {
 	/**
 	 * Builds the main object for the plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 */
 	public function __construct() {
 
 		$this->plugin_slug = 'read-more-about';
-		$this->version     = '1.8.0';
+		$this->version     = '2.0.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -78,7 +78,7 @@ class Read_More_About {
 	/**
 	 * Loads all of the files we're depending on to run the plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 */
 	private function load_dependencies() {
 
@@ -99,7 +99,7 @@ class Read_More_About {
 	 * Uses the JM_Client_Manager_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.8.0
+	 * @since    2.0.0
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -110,7 +110,7 @@ class Read_More_About {
 	/**
 	 * Runs all of the setup functions for the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	private function define_setup_hooks() {
 		$plugin_setup = new Read_More_About_Setup( $this->get_plugin_name(), $this->get_version() );
@@ -119,7 +119,7 @@ class Read_More_About {
 	/**
 	 * Runs all of the admin hooks for the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	private function define_admin_hooks() {
 		$admin = new Read_More_About_Admin( $this->get_version() );
@@ -135,7 +135,7 @@ class Read_More_About {
 	/**
 	 * Runs all of the public hooks for the plugin.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	private function define_public_hooks() {
 		$public = new Read_More_About_Public( $this->get_version() );
@@ -147,7 +147,7 @@ class Read_More_About {
 	/**
 	 * Runs any updates needed to the database
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	private function update_database() {
 		$database = new Read_More_About_Database_Updates();
@@ -157,7 +157,7 @@ class Read_More_About {
 	/**
 	 * Runs the plugin set up.
 	 *
-	 * @since 1.8.0
+	 * @since 2.0.0
 	 */
 	public function run() {
 		$this->loader->run();
@@ -166,7 +166,7 @@ class Read_More_About {
 	/**
 	 * Gets the current version of the plugin.
 	 *
-	 * @since  1.8.0
+	 * @since  2.0.0
 	 * @return string    The version of the plugin.
 	 */
 	public function get_version() {
@@ -177,7 +177,7 @@ class Read_More_About {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.8.0
+	 * @since     2.0.0
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
@@ -187,7 +187,7 @@ class Read_More_About {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.8.0
+	 * @since     2.0.0
 	 * @return    Read_More_About_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {

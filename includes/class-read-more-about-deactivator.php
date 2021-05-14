@@ -3,7 +3,7 @@
  * Fired during plugin deactivation
  *
  * @link       https://jacobmartella.com
- * @since      1.8.0
+ * @since      2.0.0
  *
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
@@ -16,7 +16,7 @@ namespace Read_More_About;
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      1.8.0
+ * @since      2.0.0
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
  */
@@ -25,7 +25,7 @@ class Read_More_About_Deactivator {
 	/**
 	 * Runs code when the plugin is deactivated.
 	 *
-	 * @since    1.8.0
+	 * @since    2.0.0
 	 */
 	public static function deactivate() {
 

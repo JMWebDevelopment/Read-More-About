@@ -6,7 +6,7 @@
  * so that it is ready for translation.
  *
  * @link       https://jacobmartella.com
- * @since      1.8.0
+ * @since      2.0.0
  *
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
@@ -20,7 +20,7 @@ namespace Read_More_About;
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.8.0
+ * @since      2.0.0
  * @package    Read_More_About
  * @subpackage Read_More_About/includes
  */
