@@ -1,0 +1,116 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.read-more-about {
+	width: 240px;
+	position: relative;
+	margin: 10px 0;
+	padding: 10px 5px;
+	text-align: center;
+	-webkit-box-shadow: 0 0 5px 0 rgba(97, 97, 97, 0.26);
+	-moz-box-shadow: 0 0 5px 0 rgba(97, 97, 97, 0.26);
+	box-shadow: 0 0 5px 0 rgba(97, 97, 97, 0.26);
+
+	&.left {
+		float: left;
+		margin-right: 10px;
+	}
+
+	&.center {
+		margin: auto;
+		width: 100%;
+	}
+
+	&.right {
+		float: right;
+		margin-left: 10px;
+	}
+
+	& .title {
+		font-size: 28px;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+
+	& .title {
+		color: #000;
+	}
+
+	& .photo {
+		width: 220px;
+		height: 110px;
+		margin: auto;
+		overflow: hidden;
+	}
+
+	& h3.story-title {
+		line-height: 1.1 !important;
+		margin-top: 5px;
+	}
+
+	& .story-title a {
+		font-size: 20px;
+	}
+
+	&.light {
+		background-color: #fff;
+
+		& .story-title a {
+			color: #000000 !important;
+		}
+	}
+
+	&.dark {
+		background-color: #252525;
+
+		& .title {
+			color: #fff;
+		}
+
+		& .story-title a {
+			color: #FFFFFF !important;
+		}
+	}
+}
+
+.read-more-about-widget {
+	width: 100%;
+	background-color: transparent;
+
+	& .left {
+		float: left;
+		margin-right: 10px;
+	}
+
+	& .center {
+		margin: auto;
+		width: 100%;
+	}
+
+	& .right {
+		float: right;
+		margin-left: 10px;
+	}
+
+	& .story {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	& .photo {
+		width: 100%;
+		height: auto;
+	}
+
+	& h3.story-title {
+		line-height: 1.1 !important;
+		margin-top: 5px;
+	}
+
+	& .story-title a {
+		font-size: 20px;
+	}
+}
