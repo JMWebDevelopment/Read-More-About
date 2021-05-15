@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Read More About\n"
+"POT-Creation-Date: 2017-05-29 16:02-0500\n"
+"PO-Revision-Date: 2017-05-29 16:02-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: read-more-about.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/read-more-about-admin.php:32
+msgid "External"
+msgstr "Extern"
+
+#: admin/read-more-about-admin.php:33
+msgid "Internal"
+msgstr "Intern"
+
+#: admin/read-more-about-admin.php:38
+msgid "Related Links"
+msgstr "Weiterführende Links"
+
+#: admin/read-more-about-admin.php:53
+msgid "Color Scheme"
+msgstr "Farbschema"
+
+#: admin/read-more-about-admin.php:73 admin/read-more-about-admin.php:132
+#: admin/read-more-about-admin.php:172
+msgid "External/Internal Link"
+msgstr "Externe/interne Link"
+
+#: admin/read-more-about-admin.php:88 admin/read-more-about-admin.php:141
+#: admin/read-more-about-admin.php:186
+msgid "External URL"
+msgstr "Externe URL"
+
+#: admin/read-more-about-admin.php:94 admin/read-more-about-admin.php:146
+#: admin/read-more-about-admin.php:191
+msgid "External URL Title"
+msgstr "Externe URL-Titel"
+
+#: admin/read-more-about-admin.php:100 admin/read-more-about-admin.php:151
+#: admin/read-more-about-admin.php:196
+msgid "Internal Post"
+msgstr "Interne Post"
+
+#: admin/read-more-about-admin.php:119 admin/read-more-about-admin.php:160
+#: admin/read-more-about-admin.php:210
+msgid "Link Description"
+msgstr "Linkbeschreibung"
+
+#: admin/read-more-about-admin.php:123 admin/read-more-about-admin.php:164
+#: admin/read-more-about-admin.php:214
+msgid "Remove Link"
+msgstr "Verknüpfung aufheben"
+
+#: admin/read-more-about-admin.php:218
+msgid "Add Link"
+msgstr "Link hinzufügen"
+
+#: read-more-about-widget.php:21
+msgid "Read More About Widget"
+msgstr "Lesen Sie mehr über Widget"
+
+#: read-more-about-widget.php:95
+msgid "Title:"
+msgstr "Titel:"
+
+#: read-more-about.php:68
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#. Plugin Name of the plugin/theme
+msgid "Read More About"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.jacobmartella.com/read-more-about/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Allows users to add links in a story using a shortcode to provide addition "
+"reading material about a subject. Works great for large topics that can't "
+"all be explained in one post."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Jacob Martella"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.jacobmartella.com"
+msgstr ""
