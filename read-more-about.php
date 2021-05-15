@@ -3,7 +3,7 @@
  * Plugin Name:       Read More About
  * Plugin URI:        https://jacobmartella.com/wordpress/wordpress-plugins/read-more-about/
  * Description:       Allows users to add links in a story using a shortcode to provide addition reading material about a subject. Works great for large topics that can't all be explained in one post.
- * Version:           1.8.0
+ * Version:           2.0.0
  * Author:            Jacob Martella Web Development
  * Author URI:        https://jacobmartella.com
  * Text Domain:       read-more-about
@@ -30,7 +30,7 @@ if ( ! defined( 'CM_TABLE_PREFIX' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-jm-starter-plugin-activator.php
  *
- * @since 1.8.0
+ * @since 2.0.0
  */
 function activate_read_more_about() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-read-more-about-activator.php';
@@ -41,7 +41,7 @@ function activate_read_more_about() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-starter-plugin-deactivator.php
  *
- * @since 1.8.0
+ * @since 2.0.0
  */
 function deactivate_read_more_about() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-read-more-about-deactivator.php';
@@ -64,7 +64,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-read-more-about.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.8.0
+ * @since    2.0.0
  */
 function run_read_more_about() {
 
