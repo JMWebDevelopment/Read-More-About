@@ -31,12 +31,14 @@ export default function save( props ) {
 		return <div className={ 'story' } key={ index }> { links } </div>;
 	} );
 
+	const blockProps = useBlockProps.save( {
+		className: 'wp-block-read-more-about-read-more-about ' + props.attributes.read_more_color_scheme,
+	} );
+
 	return (
-		<div { ...useBlockProps.save() }>
-			<div className={ props.className + ' ' + props.attributes.read_more_color_scheme }>
-				<h2>{ props.attributes.read_more_title }</h2>
-				{ linkDisplay }
-			</div>
+		<div { ...blockProps }>
+			<h2 className={ 'title' }>{ props.attributes.read_more_title }</h2>
+			{ linkDisplay }
 		</div>
 	);
 }

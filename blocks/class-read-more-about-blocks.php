@@ -48,10 +48,7 @@ class Read_More_About_Blocks {
 
 	public function create_blocks() {
 		register_block_type(
-			__DIR__ . '/build/read-more-about',
-			array(
-				'render_callback' => array( $this, 'render_read_more_about_block' ),
-			)
+			__DIR__ . '/build/read-more-about'
 		);
 	}
 

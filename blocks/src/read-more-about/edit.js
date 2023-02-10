@@ -48,7 +48,6 @@ import './editor.scss';
 export default function Edit( props ) {
 	if ( false === props.attributes.getPost ) {
 		getPosts().then(function (options) {
-			console.log(options);
 			props.setAttributes({
 				getPost: true,
 				posts: options
@@ -73,7 +72,6 @@ export default function Edit( props ) {
 	function onSelectPost( option, index ){
 		axios.get(`/wp-json/wp/v2/posts?include[]=${option}`)
 		.then(response => {
-			console.log( response );
 			let post = response.data;
 			const read_more_links = [ ...props.attributes.read_more_links ];
 			read_more_links[ index ].in_link_post_id = option;
@@ -81,82 +79,10 @@ export default function Edit( props ) {
 			read_more_links[ index ].in_link = post[0].link;
 			read_more_links[ index ].in_link_photo = post[0].read_more_featured_image_src.full[0];
 			read_more_links[ index ].in_link_photo_alt = post[0].read_more_featured_image_src.alt;
-			console.log(read_more_links);
 			props.setAttributes({
 				read_more_links
 			});
   		 })
-		/*console.log('selecting a post');
-		let options = [];
-		const posts = wp.data.select( 'core' ).getEntityRecords( 'postType', 'post', { include: option } );
-		console.log(posts);
-		console.log(index);
-		if ( null === posts ) {
-			console.log(option);
-			return options;
-		}
-		posts.forEach( ( post ) => {
-			console.log( post );
-			console.log( option );
-			const read_more_links = [ ...props.attributes.read_more_links ];
-			read_more_links[ index ].in_link_post_id = option.value;
-			read_more_links[ index ].in_link_title = post.title.rendered;
-			read_more_links[ index ].in_link = post.link;
-			read_more_links[ index ].in_link_photo = post.read_more_featured_image_src.full[0];
-			read_more_links[ index ].in_link_photo_alt = post.read_more_featured_image_src.alt;
-			props.setAttributes({
-				read_more_links
-			});
-		} );
-		return options;*/
-
-		/*if( option === null ){
-			console.log(null);
-			getPosts().then( function( options ) {
-				console.log(options);
-				const read_more_links = [ props.attributes.read_more_links ];
-				read_more_links[ index ].in_link_post_id = option.value;
-				read_more_links[ index ].in_link_title = option.label;
-				props.setAttributes({
-					read_more_links,
-					getPost: false,
-					posts: options
-				});
-			});
-		} else {
-			console.log('There is an option');
-			getPosts().then( function( options ) {
-				console.log(options);
-				var url = '/wp-json/wp/v2/posts?per_page=100';
-				console.log(url);
-				return fetch( url, {
-					credentials: 'same-origin',
-					method: 'get',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json'
-					}})
-					.then( handleFetchErrors )
-					.then( ( response ) => response.json() )
-					.then( ( json ) => {
-						console.log(json);
-						const read_more_links = [ ...props.attributes.read_more_links ];
-						read_more_links[ index ].in_link_post_id = option.value;
-						read_more_links[ index ].in_link_title = option.label;
-						read_more_links[ index ].in_link = json[0].link;
-						read_more_links[ index ].in_link_photo = json[0].read_more_featured_image_src.full[0];
-						read_more_links[ index ].in_link_photo_alt = json[0].read_more_featured_image_src.alt;
-						props.setAttributes({
-							read_more_links,
-							getPosts: true,
-							posts: options
-						});
-					})
-					.catch(function(e) {
-						console.log(e);
-					});
-			});
-		}*/
 	}
 
 	function handleFetchErrors( response ) {
@@ -167,15 +93,12 @@ export default function Edit( props ) {
 	}
 
 	const handleAddLocation = () => {
-		console.log('clicked');
 		const read_more_links = [ ...props.attributes.read_more_links ];
-		console.log( [ read_more_links ] );
 		read_more_links.push( {
 			text: '',
 			target: '',
 			link_type: 'external'
 		} );
-		console.log( [ read_more_links ] );
 		props.setAttributes( { read_more_links } );
 	};
 
@@ -215,9 +138,7 @@ export default function Edit( props ) {
 	let linkDisplay = [];
 
 	if ( props.attributes.read_more_links.length ) {
-		console.log(props.attributes.read_more_links);
 		linkFields = props.attributes.read_more_links.map( ( location, index ) => {
-			console.log(props.attributes.read_more_links[ index ]);
 			var singleLinkFields = [];
 			if ( 'internal' === props.attributes.read_more_links[ index ].link_type ) {
 				let selectPostValue;
@@ -226,7 +147,6 @@ export default function Edit( props ) {
 				} else {
 					selectPostValue =props.attributes.read_more_links[ index ].in_link_post_id;
 				}
-				console.log( selectPostValue );
 				singleLinkFields = (
 					<ComboboxControl
 						label={ __( 'Select Post', '' ) }
@@ -244,7 +164,6 @@ export default function Edit( props ) {
 						}
 					/>
 				);
-				console.log( singleLinkFields );
 			} else {
 				let linkURL;
 				let linkText;
@@ -259,8 +178,6 @@ export default function Edit( props ) {
 				} else {
 					linkText = props.attributes.read_more_links[ index ].ex_link_title;
 				}
-				console.log( linkURL );
-				console.log( linkText );
 
 				singleLinkFields = [
 					<TextControl
@@ -276,11 +193,10 @@ export default function Edit( props ) {
 						label="Link Text"
 						value={ linkText }
 						onChange={ ( text ) => handleExLinkTitleChange( text, index ) }
-					/>];
-				console.log('passed here');
+					/>
+				];
 			}
 
-			console.log(index);
 			return [
 				<div key={ index }>
 					<PanelBody>
@@ -309,7 +225,6 @@ export default function Edit( props ) {
 			var links = '';
 			if ( 'internal' === props.attributes.read_more_links[ index ].link_type ) {
 				var linkPhoto = '';
-				console.log(props.attributes.read_more_links[ index ].link_type);
 
 				if ( undefined !== props.attributes.read_more_links[ index ].in_link ) {
 					if ( '' !== props.attributes.read_more_links[ index ].in_link_photo && null !== props.attributes.read_more_links[ index ].in_link_photo && undefined !== props.attributes.read_more_links[ index ].in_link_photo ) {
@@ -333,8 +248,11 @@ export default function Edit( props ) {
 			return <div className={ 'story' } key={ index }> { links } </div>;
 		} );
 	}
-	console.log( linkFields );
-	console.log( linkDisplay );
+
+	const blockProps = useBlockProps( {
+		className: 'wp-block-read-more-about-read-more-about ' + props.attributes.read_more_color_scheme,
+		'data-id': 'special-h1-id'
+	} );
 
 	return [
 		<InspectorControls>
@@ -345,7 +263,7 @@ export default function Edit( props ) {
 					onChange={ ( title ) => handleTitleChange( title ) }
 				/>
 			</PanelBody>
-			<PanelBody title={ __( 'Highlights' ) }>
+			<PanelBody title={ __( 'Links' ) }>
 				{ linkFields }
 				<Button
 					onClick={ handleAddLocation.bind( this ) }
@@ -365,8 +283,8 @@ export default function Edit( props ) {
 				/>
 			</PanelBody>
 		</InspectorControls>,
-		<div  { ...useBlockProps() }>
-			<h2>{ props.attributes.read_more_title }</h2>
+		<div { ...blockProps }>
+			<h2 className={ 'title' }>{ props.attributes.read_more_title }</h2>
 			{ linkDisplay }
 		</div>,
 	];
