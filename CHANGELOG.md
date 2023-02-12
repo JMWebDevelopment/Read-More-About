@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1
+- Updated the block to work with the way Gutenberg and the block editor work.
+
 ## 2.0
 - Refactor the entire plugin to use an object-oriented programming paradigm.
 - Upped the lowest PHP version supported to 7.0.

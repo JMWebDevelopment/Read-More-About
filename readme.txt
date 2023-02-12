@@ -1,10 +1,10 @@
 === Read More About ===
 Contributors: ArenaPigskin
 Tags: related links, shortcodes, custom meta panel
-Requires at least: 4.0
-Tested up to: 5.7.2
+Requires at least: 6.0
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -24,6 +24,9 @@ Read More About allows users to add links in a story using a shortcode to provid
 3. The Read More About section in a post.
 
 == Changelog ==
+= 2.1 =
+- Updated the block to work with the way Gutenberg and the block editor work.
+
 = 2.0 =
 - Refactor the entire plugin to use an object-oriented programming paradigm.
 - Upped the lowest PHP version supported to 7.0.
