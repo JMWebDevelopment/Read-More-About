@@ -3,7 +3,7 @@
  * Plugin Name:       Read More About
  * Plugin URI:        https://jacobmartella.com/wordpress/wordpress-plugins/read-more-about/
  * Description:       Allows users to add links in a story using a shortcode to provide addition reading material about a subject. Works great for large topics that can't all be explained in one post.
- * Version:           2.0.0
+ * Version:           2.1.0
  * Author:            Jacob Martella Web Development
  * Author URI:        https://jacobmartella.com
  * Text Domain:       read-more-about

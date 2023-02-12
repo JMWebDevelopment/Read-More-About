@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "read-more-about/read-more-about",
+  "version": "1.0",
+  "title": "Read More About",
+  "category": "widgets",
+  "description": "Example block scaffolded with Create Block tool.",
+  "attributes": {
+    "read_more_links": {
+      "type": "array",
+      "default": []
+    },
+    "read_more_title": {
+      "type": "string",
+      "default": "Read More"
+    },
+    "read_more_color_scheme": {
+      "type": "string",
+      "default": "light"
+    },
+    "posts": {
+      "type": "array",
+      "default": []
+    },
+    "getPost": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    },
+    "__experimentalLayout": true
+  },
+  "textdomain": "read-more-about",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

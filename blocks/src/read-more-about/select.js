@@ -3,6 +3,7 @@ import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import fetch from 'isomorphic-fetch';
+import AsyncSelect from "react-select/async";
 
 const SelectPost = createClass({
     displayName: 'SelectPost',
@@ -29,7 +30,6 @@ const SelectPost = createClass({
                 credentials: 'same-origin',
                 method: 'get',
                 headers: {
-                    'X-WP-Nonce': this.props.nonce
                 }})
                 .then( this.handleFetchErrors )
                 .then( ( response ) => response.json() )
@@ -51,7 +51,6 @@ const SelectPost = createClass({
             credentials: 'same-origin',
             method: 'get',
             headers: {
-                'X-WP-Nonce': this.props.nonce
             }})
             .then( this.handleFetchErrors )
             .then( ( response ) => response.json() )
@@ -94,16 +93,12 @@ const SelectPost = createClass({
         });
     },
     render () {
-        const AsyncComponent = this.state.creatable
-            ? Select.AsyncCreatable
-            : Select.Async;
-
-        console.log(this.getData);
         return (
             <div className="section">
-                <Select.Async
+                <AsyncSelect
+					defaultOptions
                     value={this.state.value}
-                    onChange={this.onChange}
+                    onInputChange={this.onChange}
                     loadOptions={this.getData}
                 />
             </div>
