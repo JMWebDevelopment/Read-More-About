@@ -72,6 +72,7 @@ class Read_More_About {
 		$this->define_setup_hooks();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_block_hooks();
 
 	}
 
@@ -87,6 +88,7 @@ class Read_More_About {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-read-more-about-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-read-more-about-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-read-more-about-database-updates.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'blocks/class-read-more-about-blocks.php';
 
 		require_once plugin_dir_path( __FILE__ ) . 'class-read-more-about-loader.php';
 		$this->loader = new Read_More_About_Loader();
@@ -129,7 +131,7 @@ class Read_More_About {
 		$this->loader->add_action( 'save_post', $admin, 'save_meta_box' );
 		$this->loader->add_action( 'init', $admin, 'read_more_about_buttons' );
 		$this->loader->add_action( 'rest_api_init', $admin, 'extend_rest_post_response' );
-		$this->loader->add_action( 'init', $admin, 'check_gutenberg' );
+		//$this->loader->add_action( 'init', $admin, 'check_gutenberg' );
 	}
 
 	/**
@@ -142,6 +144,16 @@ class Read_More_About {
 		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_styles' );
 		$this->loader->add_action( 'init', $public, 'register_shortcode' );
 		$this->loader->add_action( 'widgets_init', $public, 'register_widget' );
+	}
+
+	/**
+	 * Runs all of the admin hooks for the plugin.
+	 *
+	 * @since 2.1.0
+	 */
+	private function define_block_hooks() {
+		$blocks = new Read_More_About_Blocks( $this->get_version() );
+		$this->loader->add_action( 'init', $blocks, 'create_blocks' );
 	}
 
 	/**
